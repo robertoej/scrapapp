@@ -124,3 +124,4 @@ somaAssincrona(4, '5').then((resultado) => {
  });
  ```
  2. Executar script utilizando o comando `node promise.js`.
+ 3. *Bônus: desbravar funções async e await.*  
