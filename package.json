@@ -1,0 +1,29 @@
+{
+  "name": "scrapapp",
+  "version": "1.0.0",
+  "description": "A simple script for web scraping built on Nodejs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertoej/scrapapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertoej/scrapapp/issues"
+  },
+  "homepage": "https://github.com/robertoej/scrapapp#readme",
+  "devDependencies": {
+    "expect": "^22.4.3",
+    "mocha": "^5.1.0",
+    "nodemon": "^1.17.3",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
