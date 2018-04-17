@@ -1,15 +1,15 @@
 const expect = require('expect');
 const request = require('supertest');
 
-const {app} = require('./../index')
+const {app} = require('./../server')
 
-describe('Hello World', () => {
-    it('should return helloworld', (done) => {
+describe('GET /teste', () => {
+    it('deve retornar "Funciona"', (done) => {
         request(app)
-            .get('/hello')
+            .get('/teste')
             .expect(200)
             .expect((res) => {
-                expect(res.text).toBe('Hello World!');
+                expect(res.text).toBe('Funciona!');
             })
             .end((err, res) => {
                 if (err) {

@@ -1,4 +1,4 @@
-# Scrapapp
+# Web Scraping com Node.js e Ubuntu
 ## Primeiros Passos
 1. `sudo apt-get update`
 2. `sudo apt-get install nodejs`
@@ -37,3 +37,33 @@ app.listen(3000, () => {
 ```
 3. Executar *script* utilizando o comando `node server.js`.
 4. Acessar o endereço `localhost:3000/teste` no browser.
+## Como testar seu serviço HTTP
+1. `npm -i mocha -g`
+2. `npm i expect nodemon supertest --save-dev`
+3. Adicionar o conteúdo `module.exports = {app};` no final do arquivo `server.js`.
+3. `mkdir test`
+4. Criar um arquivo com nome `server.test.js` com o seguinte conteúdo:
+```javascript
+const expect = require('expect');
+const request = require('supertest');
+
+const {app} = require('./../server')
+
+describe('GET /teste', () => {
+    it('deve retornar "Funciona"', (done) => {
+        request(app)
+            .get('/teste')
+            .expect(200)
+            .expect((res) => {
+                expect(res.text).toBe('Funciona!');
+            })
+            .end((err, res) => {
+                if (err) {
+                    return done(err);
+                }
+
+                done();
+            });
+    });
+});
+```
