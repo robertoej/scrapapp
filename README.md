@@ -8,7 +8,7 @@
 6. `npm init`
 ## Realizando uma simples requisição HTTP
 1. `npm i request --save`
-2. Criar o arquivo `server.js` dentro do diretório `scrapapp` com o seguinte conteúdo: 
+2. Criar o arquivo `request.js` dentro do diretório `scrapapp` com o seguinte conteúdo: 
 ```javascript
 const request = require('request');
 
@@ -18,5 +18,21 @@ request('http://www.google.com', function (error, response, body) {
   console.log('Corpo da Resposta:', body);
 });
 ```
+3. Executar *script* utilizando o comando `node request.js`.
+## Criando um servidor HTTP
+1. `npm i express --save`
+2. Criar o arquivo `server.js` dentro do diretório `scrapapp` com o seguinte conteúdo: 
+```javascript
+const express = require('express');
 
+var app = express();
 
+app.get('/teste', (req, res) => {
+    res.send('Funciona!');
+});
+
+app.listen(3000, () => {
+    console.log('Servidor iniciado na porta 3000.');
+});
+```
+3. Executar *script* utilizando o comando `node server.js`.
