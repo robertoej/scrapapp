@@ -36,3 +36,4 @@ app.listen(3000, () => {
 });
 ```
 3. Executar *script* utilizando o comando `node server.js`.
+4. Acessar o endereço `localhost:3000/teste` no browser.
