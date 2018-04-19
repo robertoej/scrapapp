@@ -38,11 +38,11 @@ app.listen(3000, () => {
 3. Executar *script* utilizando o comando `node server.js`.
 4. Acessar o endereço `localhost:3000/teste` no browser.
 ## Como testar seu serviço HTTP
-1. `npm -i mocha -g`
-2. `npm i expect nodemon supertest --save-dev`
+1. `sudo npm i mocha -g`
+2. `npm i expect supertest --save-dev`
 3. Adicionar o conteúdo `module.exports = {app};` no final do arquivo `server.js`.
-3. `mkdir test`
-4. Criar um arquivo com nome `server.test.js` com o seguinte conteúdo:
+4. `mkdir test`
+5. Criar um arquivo com nome `server.test.js` com o seguinte conteúdo:
 ```javascript
 const expect = require('expect');
 const request = require('supertest');
@@ -67,7 +67,7 @@ describe('GET /teste', () => {
     });
 });
 ```
-5. Executar testes utilizando o comando `mocha tests/*.test.js`.
+6. Executar testes utilizando o comando `mocha tests/*.test.js`.
 ## Usando promessas (*promise*)
 1. Criar o arquivo `promise.js` dentro do diretório `scrapapp` com o seguinte conteúdo: 
 ```javascript
